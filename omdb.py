@@ -1,4 +1,6 @@
 import json, requests, copy
+from final_proj_tree import TreeNode as Tree
+from final_proj_tree import BinarySearchTree as BST
 
 BASE_URL = 'http://www.omdbapi.com/?apikey=4697b61d&'
 
