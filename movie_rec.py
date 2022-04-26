@@ -2,7 +2,7 @@ from matplotlib.font_manager import json_load
 from oscars_db import movies
 from omdb import BASE_URL
 import json, requests, copy
-from final_proj_tree import BinarySearchTree,TreeNode
+
 
 
 #STRUCTURE: requests.get(BASE_URL+'t='+movies[0][0]+'&y='+movie[0][1])
