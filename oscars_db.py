@@ -1,11 +1,28 @@
-from bs4 import BeautifulSoup
-from urllib.request import urlopen
+from bs4 import BeautifulSoup as bs
+import requests
+import urllib
+import re
+import pandas as pd
+import os
 
-f = open("oscars-all-nominations.html")
+oscars_base_url = 'https://letterboxd.com/nevertooearlymp/list/every-film-ever-nominated-for-an-academy/detail/page/'
+#page/number/
+movies = []
+for page in range(1,52):
+    req = requests.get(oscars_base_url + str(page) + '/')
+    soup = bs(req.text,'html.parser')
+    containers = soup.find_all("li",{"film-detail"})
+    for i in containers:
+        tup = (i.h2.a.text,i.small.a.text)
+        movies.append(tup)
 
-html_text = f.read()
 
-soup = BeautifulSoup(html_text, 'html.parser')
-all_movies = soup.find_all('a', class_='nominations-link')
+#print(movies[:3])
 
-#print(len(all_movies))
+
+
+
+#print(type(movies))
+#print(len(movies))
+#print(movies[-1])
+#print(movies[0])
