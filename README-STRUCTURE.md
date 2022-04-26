@@ -1,1 +1,1 @@
-I have chosen to use a tree to store my data. I will have all the data stored in my root, and I will pop elements based on if they meet the user’s inputed criterion. 
+I have chosen to use a tree to store my data. I will have all the data stored in my root, and I will pop elements based on if they meet the user’s inputed criterion. The new shortened list will makeup the children and leaves of the tree. 
